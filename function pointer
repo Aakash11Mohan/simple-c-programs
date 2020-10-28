@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int sum(int a,int b)
+{
+    return a+b;
+}
+
+int main()
+{
+    int res;
+    int (*funcptr)(int,int);
+    funcptr=sum;
+    res=(*funcptr)(10,20);
+    printf("Sum is:%d",res);
+    return 0;
+}
