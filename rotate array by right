@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void rotateright(int arr[], int k,int n)
+{
+    for(int i=0;i<k;i++)
+    {
+        rightbyone(arr,n);
+    }
+}
+
+void rightbyone(int arr[],int n)
+{
+    int i, temp;
+
+    /* Store last element of array */
+    temp = arr[n - 1];
+
+    for(i=n-1; i>0; i--)
+    {
+        /* Move each array element to its right */
+        arr[i] = arr[i - 1];
+    }
+
+    /* Copy last element of array to first */
+    arr[0] = temp;
+}
+
+void print(int arr[], int n)
+{
+    int i;
+    for (i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+}
+// Driver code
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int k;
+    printf("\n Enter by how much to rotate:");
+    scanf("%d",&k);
+    //function to rotate an array
+    rotateright(arr,k,n);
+    print(arr,n);
+
+
+    return 0;
+}
