@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+int findsingle(int arr[], int n)
+{
+    int temp;
+    temp=arr[0];
+    for(int i=1;i<n;i++)
+        temp=temp^arr[i];
+    return temp;
+}
+
+// Driver code
+int main()
+{
+    int arr[] = {2, 3, 5, 4, 5, 3, 4};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int a;
+    a=findsingle(arr, n);
+    printf("%d",a);
+    return 0;
+}
