@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void reverse_string(char* str)
+{
+	int len;
+	int index;
+	char *start, *end, temp;
+	len = strlen(str);
+
+
+
+	start= str;
+	end= str+len-1;
+
+
+	for (index = 0; index < len / 2; index++)
+    {
+
+		// swap values of the both pointers
+		temp = *end;
+		*end = *start;
+		*start = temp;
+
+
+		start++;
+		end--;
+	}
+}
+
+// Test string reversal function
+int main()
+{
+
+	char str[]={"welcome to my world"};
+
+	reverse_string(str);
+
+
+	printf("%s", str);
+
+	return 0;
+}
