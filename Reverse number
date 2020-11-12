@@ -1,0 +1,26 @@
+// C program to reverse digits of a number
+#include <stdio.h>
+int reversDigits(int num)
+{
+    bool negativeFlag = false;
+    if (num < 0)
+    {
+        negativeFlag = true;
+        num = -num ;
+    }
+    int rev_num = 0;
+    while (num != 0)
+    {
+        rev_num = rev_num*10 + num%10;
+        num = num/10;
+    }
+     return (negativeFlag == true)? -rev_num : rev_num;
+}
+
+int main()
+{
+    int num = -12345;
+    printf("Reverse of no. is %d\n", reversDigits(num));
+
+    return 0;
+}
